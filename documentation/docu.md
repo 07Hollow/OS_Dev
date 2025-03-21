@@ -38,18 +38,18 @@ All processors have a number of registers (very small and fast memory)
 
 mainly used for keeping indices and pointers
 
-# Status registers 
-## Program counter
+## Status registers 
+### Program counter
 
 ![alt Status register](img/status_register.png)
 
 Keeps track of which memory location the curent instruction begins
 
-## Flags register
+### Flags register
 
 contains special flags which are set by various instructions
 
-# Segment registers
+## Segment registers
 
 ![alt segmemnt register](img/segment_register.png)
 
