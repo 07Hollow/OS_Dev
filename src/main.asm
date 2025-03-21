@@ -12,4 +12,4 @@ main:
 
 ; BIOS expects the boot sector to end with 0x55AA
 times 510-($-$$) db 0 ; fills bootsector with zeros till Byte 510
-dw 0x55AA ; bootsector signature
+dw 0AA55h ; bootsector signature
