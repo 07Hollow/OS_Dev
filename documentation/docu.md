@@ -22,10 +22,6 @@ We will use x86 ASM so it will work for x86 CPUs
 
 5. OS runs
 
-# Plan what to do
-Write some code (lets see) assamble it and put it in the first sector of a floppy disc (kids dont konw them anymore ._.)
-Implement the signature
-
 # Concept of x86 architecture
 All processors have a number of registers (very small and fast memory)
 
@@ -54,3 +50,35 @@ contains special flags which are set by various instructions
 ![alt segmemnt register](img/segment_register.png)
 
 Are used to keep track of the currently active memory segments 
+**CS:** currently running code segment
+**DS:** Data segment 
+**SS:** Stack segment
+**ES, FS, GS:** extra (data) segments
+
+# RAM memory
+The Intel 8086 is a 16-Bit-micro-processor. It has 20-bit address bus. That means you have around 1MB of addressable memory.
+Since computers had 64-128 KB of memory at the time they thought that this was a huge amount of memory.
+
+They used a segment and offset addressing scheme for memory:
+
+    0x1234:0x5678
+    segment:offset
+
+In this scheme you address memory by using two 16-Bit values.
+1. The segment
+2. The offset
+each of them contains 64 KB of memory where each byte can be accessed through using the offset value.
+Since segments overlap every 16 bytes you can convert a segment offset address to an absolute address by shifting the segmants 
+four bits to the left and then multiply it by 16 and then adding the offset. 
+
+In short: There are multiple ways of addressing the same memory location.
+
+    address = segment * 16 + offset
+
+For example the address **0x7C00** can be writen in the following combinations:
+- 0x0000:0x7C00
+- 0x0001:0x7BF0
+- 0x0010:0x7B00
+- 0x00C0:0x7C00
+- 0x07C0:0x0000
+
