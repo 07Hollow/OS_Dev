@@ -25,3 +25,32 @@ We will use x86 ASM so it will work for x86 CPUs
 # Plan what to do
 Write some code (lets see) assamble it and put it in the first sector of a floppy disc (kids dont konw them anymore ._.)
 Implement the signature
+
+# Concept of x86 architecture
+All processors have a number of registers (very small and fast memory)
+
+![alt x86 architecture](img/x86_architecture.png)
+
+## Gerneral purpose registers
+### index registers
+
+![alt index register](img/index_registers.png)
+
+mainly used for keeping indices and pointers
+
+# Status registers 
+## Program counter
+
+![alt Status register](img/status_register.png)
+
+Keeps track of which memory location the curent instruction begins
+
+## Flags register
+
+contains special flags which are set by various instructions
+
+# Segment registers
+
+![alt segmemnt register](img/segment_register.png)
+
+Are used to keep track of the currently active memory segments 
